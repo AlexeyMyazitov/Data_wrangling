@@ -13,6 +13,7 @@ if not paths_to_mf_file:
     print('Файлы mf не найдены')
     sys.exit()
 
+#
 # Список переменных, которые будут считываться с границ inlet, outlet и всех ID
 # Здесь присутствуют только общие параметры границ inlet/outlet и ID
 list_parameters_in_sections = [
