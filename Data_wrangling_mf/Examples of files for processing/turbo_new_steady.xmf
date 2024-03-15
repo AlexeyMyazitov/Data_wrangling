@@ -1,0 +1,263 @@
+<?xml version="1.0" ?>
+<Computation name="E:\aspirant\Tutorial_9\turbo\turbo_new_steady\turbo_new_steady.run">
+<MeshData>
+<integer name="Number of blocks">50</integer>
+<integer name="Total number of nodes">980966</integer>
+</MeshData>
+<FluidProperties>
+<string name="Fluid type">Real gas</string>
+</FluidProperties>
+<WeightFactorsForAveraging>
+<string name="For static pressure">cell face area</string>
+<string name="For all other variables">absolute cell face mass flux</string>
+</WeightFactorsForAveraging>
+<Station name="Inlet">
+<GeometricalData>
+<float name="Hub radius" unit="[m]">0.3053773</float>
+<float name="Shroud radius" unit="[m]">0.3729722</float>
+<float name="Area" unit="[m2]">0.00360128</float>
+<integer name="Number of blades">40</integer>
+<float name="Rotational speed" unit="[rad/s]">0</float>
+</GeometricalData>
+<FluidProperties>
+<float name="Specific heat (Cp)" unit="[J/(kg K)]">1076.751</float>
+<float name="Specific heat ratio">1.36341</float>
+</FluidProperties>
+<Velocity name="Absolute velocities">
+<float name="Radial velocity" unit="[m/s]">0</float>
+<float name="Absolute tangential velocity" unit="[m/s]">0</float>
+<float name="Axial velocity" unit="[m/s]">59.27893</float>
+<float name="Absolute velocity magnitude" unit="[m/s]">59.27893</float>
+<float name="Meridional flow angle" unit="[deg]">0</float>
+<float name="Absolute blade-to-blade flow angle" unit="[deg]">0</float>
+<float name="Absolute Mach number">0.11268</float>
+<float name="Swirl" unit="[m2/s]">0</float>
+</Velocity>
+<Velocity name="Relative velocities">
+<float name="Relative tangential velocity" unit="[m/s]">0</float>
+<float name="Relative velocity magnitude" unit="[m/s]">59.27893</float>
+<float name="Relative blade-to-blade flow angle" unit="[deg]">0</float>
+<float name="Relative Mach number">0.11268</float>
+</Velocity>
+<Condition name="Static conditions">
+<float name="Static pressure" unit="[Pa]">342098.4</float>
+<float name="Static temperature" unit="[K]">707.2694</float>
+<float name="Density" unit="[kg/m3]">1.682989</float>
+</Condition>
+<Condition name="Total conditions">
+<float name="Absolute total pressure" unit="[Pa]">344770</float>
+<float name="Absolute total temperature" unit="[K]">709</float>
+<float name="Relative total pressure" unit="[Pa]">344770</float>
+<float name="Relative total temperature" unit="[K]">709</float>
+<float name="Rothalpy" unit="[J/kg]">727458.4</float>
+</Condition>
+<MassFlow>
+<float name="Mass flow" unit="[kg/s]">12.9352</float>
+<float name="Absolute mass flow" unit="[kg/s]">12.93521</float>
+<string>(Different in case of backflow)</string>
+</MassFlow>
+</Station>
+<Station name="Outlet">
+<GeometricalData>
+<float name="Hub radius" unit="[m]">0.3090171</float>
+<float name="Shroud radius" unit="[m]">0.3799958</float>
+<float name="Area" unit="[m2]">0.003841027</float>
+<integer name="Number of blades">80</integer>
+<float name="Rotational speed" unit="[rad/s]">867.3937</float>
+</GeometricalData>
+<FluidProperties>
+<float name="Specific heat (Cp)" unit="[J/(kg K)]">1019.395</float>
+<float name="Specific heat ratio">1.39187</float>
+</FluidProperties>
+<Velocity name="Absolute velocities">
+<float name="Radial velocity" unit="[m/s]">0.4138233</float>
+<float name="Absolute tangential velocity" unit="[m/s]">-73.87248</float>
+<float name="Axial velocity" unit="[m/s]">212.0156</float>
+<float name="Absolute velocity magnitude" unit="[m/s]">225.7032</float>
+<float name="Meridional flow angle" unit="[deg]">0.1118328</float>
+<float name="Absolute blade-to-blade flow angle" unit="[deg]">-19.20981</float>
+<float name="Absolute Mach number">0.53754</float>
+<float name="Swirl" unit="[m2/s]">-25.285</float>
+</Velocity>
+<Velocity name="Relative velocities">
+<float name="Relative tangential velocity" unit="[m/s]">-374.56</float>
+<float name="Relative velocity magnitude" unit="[m/s]">430.5842</float>
+<float name="Relative blade-to-blade flow angle" unit="[deg]">-60.4884</float>
+<float name="Relative Mach number">1.02549</float>
+</Velocity>
+<Condition name="Static conditions">
+<float name="Static pressure" unit="[Pa]">52000</float>
+<float name="Static temperature" unit="[K]">441.3408</float>
+<float name="Density" unit="[kg/m3]">0.4106573</float>
+</Condition>
+<Condition name="Total conditions">
+<float name="Absolute total pressure" unit="[Pa]">63295.61</float>
+<float name="Absolute total temperature" unit="[K]">466.3573</float>
+<float name="Relative total pressure" unit="[Pa]">101434.9</float>
+<float name="Relative total temperature" unit="[K]">531.7313</float>
+<float name="Rothalpy" unit="[J/kg]">494877.9</float>
+</Condition>
+<MassFlow>
+<float name="Mass flow" unit="[kg/s]">13.28843</float>
+<float name="Absolute mass flow" unit="[kg/s]">13.28841</float>
+<string>(Different in case of backflow)</string>
+</MassFlow>
+</Station>
+<Holes>
+<float name="Mass flow injected (cooling)" unit="[kg/s]">0.4000001</float>
+<float name="Mass_flow extracted (bleed)" unit="[kg/s]">0.04999998</float>
+</Holes>
+<Performance name="Global performance">
+<float name="Static pressure ratio">0.15200</float>
+<float name="Absolute total pressure ratio">0.18359</float>
+<float name="Static temperature ratio">0.62401</float>
+<float name="Absolute total temperature ratio">0.65777</float>
+<float name="Isentropic efficiency" desc="(total-total)">0.9210423</float>
+<float name="Axial thrust" unit="[N]">12016.36</float>
+<float name="Torque" unit="[N m]">3896.503</float>
+<float name="Power" unit="[W]">3379802</float>
+</Performance>
+<MassFlow name="Mass flow integrated on inlet groups">
+<float name="row_1_flux_1_Main_Blade_upStream_inlet">12.93518</float>
+</MassFlow>
+<MassFlow name="Mass flow integrated on outlet groups">
+<float name="OUTLET">13.28847</float>
+</MassFlow>
+<CoolingBleedDetails>
+<Injector name="injector_0">
+<float name="Mass flow" unit="[kg/s]">0.2000003</float>
+<float name="Maximum mach number">5.70890</float>
+<float name="Absolute total temperature" unit="[K]">700.0001</float>
+<float name="Absolute total pressure" unit="[Pa]">2595403</float>
+</Injector>
+<Injector name="injector_1">
+<float name="Mass flow" unit="[kg/s]">0.1999997</float>
+<float name="Maximum mach number">1.07279</float>
+<float name="Absolute total temperature" unit="[K]">700.0001</float>
+<float name="Absolute total pressure" unit="[Pa]">493059.4</float>
+</Injector>
+<Injector name="injector_2">
+<float name="Mass flow" unit="[kg/s]">-0.04999997</float>
+<float name="Maximum mach number">0.23512</float>
+<float name="Absolute total temperature" unit="[K]">704.5146</float>
+<float name="Absolute total pressure" unit="[Pa]">331102.8</float>
+</Injector>
+</CoolingBleedDetails>
+<Station name="Rotor/stator interface ID 10">
+<GeometricalData>
+<float name="Hub radius" unit="[m]">0.3239057</float>
+<float name="Shroud radius" unit="[m]">0.3654569</float>
+<float name="Area" unit="[m2]">0.002249841</float>
+<integer name="Number of blades upstream">40</integer>
+<integer name="Number of blades downstream">80</integer>
+<float name="Rotational speed upstream" unit="[rad/s]">0</float>
+<float name="Rotational speed downstre" unit="[rad/s]">867.3937</float>
+</GeometricalData>
+<FluidProperties>
+<float name="Specific heat (Cp)" unit="[J/(kg K)]">1059.052</float>
+<float name="Specific heat ratio">1.37174</float>
+</FluidProperties>
+<Velocity name="Absolute velocities">
+<float name="Radial velocity" unit="[m/s]">-3.042391</float>
+<float name="Absolute tangential velocity" unit="[m/s]">385.0051</float>
+<float name="Axial velocity" unit="[m/s]">123.7741</float>
+<float name="Absolute velocity magnitude" unit="[m/s]">404.5722</float>
+<float name="Meridional flow angle" unit="[deg]">-1.408046</float>
+<float name="Absolute blade-to-blade flow angle" unit="[deg]">72.17307</float>
+<float name="Absolute Mach number">0.81112</float>
+<float name="Swirl" unit="[m2/s]">132.6482</float>
+</Velocity>
+<Condition name="Static conditions">
+<float name="Static pressure" unit="[Pa]">219867.5</float>
+<float name="Static temperature" unit="[K]">631.9345</float>
+<float name="Density" unit="[kg/m3]">1.211687</float>
+</Condition>
+<Condition name="Total conditions">
+<float name="Absolute total pressure" unit="[Pa]">337097.6</float>
+<float name="Absolute total temperature" unit="[K]">708.7923</float>
+<float name="Rothalpy (upstream)" unit="[J/kg]">727248.2</float>
+<float name="Rothalpy (downstream)" unit="[J/kg]">612179.8</float>
+</Condition>
+<MassFlow>
+<float name="Mass flow" unit="[kg/s]">13.28597</float>
+</MassFlow>
+</Station>
+<Station name="Rotor/stator interface ID 20">
+<GeometricalData>
+<float name="Hub radius" unit="[m]">0.3193352</float>
+<float name="Shroud radius" unit="[m]">0.3674316</float>
+<float name="Area" unit="[m2]">0.002596929</float>
+<integer name="Number of blades upstream">80</integer>
+<integer name="Number of blades downstream">40</integer>
+<float name="Rotational speed upstream" unit="[rad/s]">867.3937</float>
+<float name="Rotational speed downstre" unit="[rad/s]">0</float>
+</GeometricalData>
+<FluidProperties>
+<float name="Specific heat (Cp)" unit="[J/(kg K)]">1042.19</float>
+<float name="Specific heat ratio">1.38004</float>
+</FluidProperties>
+<Velocity name="Absolute velocities">
+<float name="Radial velocity" unit="[m/s]">5.969392</float>
+<float name="Absolute tangential velocity" unit="[m/s]">-80.84542</float>
+<float name="Axial velocity" unit="[m/s]">154.2088</float>
+<float name="Absolute velocity magnitude" unit="[m/s]">176.3726</float>
+<float name="Meridional flow angle" unit="[deg]">2.216875</float>
+<float name="Absolute blade-to-blade flow angle" unit="[deg]">-27.64886</float>
+<float name="Absolute Mach number">0.37341</float>
+<float name="Swirl" unit="[m2/s]">-27.69579</float>
+</Velocity>
+<Condition name="Static conditions">
+<float name="Static pressure" unit="[Pa]">135884.6</float>
+<float name="Static temperature" unit="[K]">563.2629</float>
+<float name="Density" unit="[kg/m3]">0.8407629</float>
+</Condition>
+<Condition name="Total conditions">
+<float name="Absolute total pressure" unit="[Pa]">149587.5</float>
+<float name="Absolute total temperature" unit="[K]">578.298</float>
+<float name="Rothalpy (upstream)" unit="[J/kg]">612720.1</float>
+<float name="Rothalpy (downstream)" unit="[J/kg]">588687.9</float>
+</Condition>
+<MassFlow>
+<float name="Mass flow" unit="[kg/s]">13.28587</float>
+</MassFlow>
+</Station>
+<Station name="Rotor/stator interface ID 30">
+<GeometricalData>
+<float name="Hub radius" unit="[m]">0.309495</float>
+<float name="Shroud radius" unit="[m]">0.3804837</float>
+<float name="Area" unit="[m2]">0.003850332</float>
+<integer name="Number of blades upstream">40</integer>
+<integer name="Number of blades downstream">80</integer>
+<float name="Rotational speed upstream" unit="[rad/s]">0</float>
+<float name="Rotational speed downstre" unit="[rad/s]">867.3937</float>
+</GeometricalData>
+<FluidProperties>
+<float name="Specific heat (Cp)" unit="[J/(kg K)]">1033.57</float>
+<float name="Specific heat ratio">1.38442</float>
+</FluidProperties>
+<Velocity name="Absolute velocities">
+<float name="Radial velocity" unit="[m/s]">2.312352</float>
+<float name="Absolute tangential velocity" unit="[m/s]">314.5287</float>
+<float name="Axial velocity" unit="[m/s]">132.0631</float>
+<float name="Absolute velocity magnitude" unit="[m/s]">341.9176</float>
+<float name="Meridional flow angle" unit="[deg]">1.003408</float>
+<float name="Absolute blade-to-blade flow angle" unit="[deg]">67.22057</float>
+<float name="Absolute Mach number">0.75085</float>
+<float name="Swirl" unit="[m2/s]">108.5248</float>
+</Velocity>
+<Condition name="Static conditions">
+<float name="Static pressure" unit="[Pa]">100290.9</float>
+<float name="Static temperature" unit="[K]">521.9023</float>
+<float name="Density" unit="[kg/m3]">0.6692322</float>
+</Condition>
+<Condition name="Total conditions">
+<float name="Absolute total pressure" unit="[Pa]">145473.8</float>
+<float name="Absolute total temperature" unit="[K]">578.333</float>
+<float name="Rothalpy (upstream)" unit="[J/kg]">588724.7</float>
+<float name="Rothalpy (downstream)" unit="[J/kg]">494587</float>
+</Condition>
+<MassFlow>
+<float name="Mass flow" unit="[kg/s]">13.2874</float>
+</MassFlow>
+</Station>
+</Computation>
