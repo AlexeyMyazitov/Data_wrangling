@@ -1,8 +1,12 @@
 import os, sys
 import socket
 import csv
-path_to_executable_file = os.path.abspath(os.path.dirname(sys.argv[0]))
+# path_to_executable_file = os.path.abspath(os.path.dirname(sys.argv[0]))
+path_to_executable_file = r"C:\PycharmProjects\Data_wrangling\QualityReport\Numeca_example\mesh2_te"
 paths_to_read_file = [os.path.join(dp, f) for dp, dn, filenames in os.walk(path_to_executable_file) for f in filenames if os.path.splitext(f)[1] == '.qualityReport']
+
+
+
 hostname = socket.gethostname()
 
 if not paths_to_read_file:
@@ -25,12 +29,11 @@ string_content = read_content(paths_to_read_file[0])
 list_content = string_content.split()
 
 main_data = []
-row_names = []
 number_of_main_blade =[]
 number_of_layers = []
 current_number_row: int = 0
-print(list_content)
-
+print(string_content)
+flag = 0
 name_param =[
             "Имя",
             "Количество узлов",
@@ -43,8 +46,8 @@ name_param =[
             "Среднее соотношение сторон",
             "Максимальный коэффициент роста в 3D",
             "Средний коэффициент роста в 3D",
-            "Среднее расстояние до стенки"
-            "Количество слоёв сетки межлопаточного канала"
+            "Среднее расстояние до стенки",
+            "Количество слоёв сетки межлопаточного канала",
             "Количество лопаток в венце"
             ]
 
@@ -61,7 +64,6 @@ for n_key, key in enumerate(list_content):
         number_of_rows = list_content[n_key + 3]
 
     if key == 'ROW' and list_content[n_key + 1] == 'NAME:':
-        row_names.append(list_content[n_key + 2])
         number_of_main_blade.append(list_content[n_key + 7])
         number_of_layers.append(list_content[n_key + 20])
 
@@ -72,7 +74,7 @@ for n_key, key in enumerate(list_content):
             and list_content[n_key+2] == 'Points'
             and list_content[n_key+6] == 'grid'
             and list_content[n_key-6] == "Entire"):
-
+        print('вся сетка')
         main_data.append([])
         main_data[current_number_row].append('Вся сетка')  # Имя ряда
         main_data[current_number_row].append(list_content[n_key + 3]) # Количество узлов
@@ -86,17 +88,19 @@ for n_key, key in enumerate(list_content):
         main_data[current_number_row].append(list_content[n_key + 70])  # Максимальный коэффициент роста в 3D
         main_data[current_number_row].append(list_content[n_key + 74])  # Средний коэффициент роста в 3D
         main_data[current_number_row].append(list_content[n_key + 89])  # Среднее расстояние до стенки
+        main_data[current_number_row].append("-") # "Количество слоёв сетки межлопаточного канала"
+        main_data[current_number_row].append("-") # "Количество лопаток в венце"
         current_number_row += 1
+
 
     if (key == 'Number'
             and list_content[n_key+1] == 'of'
             and list_content[n_key+2] == 'Points'
             and list_content[n_key+6] == 'grid'
             and list_content[n_key-6] != "Entire"):
-
-
+        print('row')
         main_data.append([])
-        main_data[current_number_row].append(row_names[current_number_row-1])  # Имя ряда
+        main_data[current_number_row].append(" ")
         main_data[current_number_row].append(list_content[n_key + 3]) # Количество узлов
         main_data[current_number_row].append(list_content[n_key + 8]) # Количество уровней сеточной модели
         main_data[current_number_row].append(list_content[n_key + 12]) # Минимальный угол скошенности
@@ -108,7 +112,39 @@ for n_key, key in enumerate(list_content):
         main_data[current_number_row].append(list_content[n_key + 96])  # Максимальный коэффициент роста в 3D
         main_data[current_number_row].append(list_content[n_key + 100])  # Средний коэффициент роста в 3D
         main_data[current_number_row].append(list_content[n_key + 121])  # Среднее расстояние до стенки
+        try:
+            main_data[current_number_row][0] = name_row
+            main_data[current_number_row].append(number_of_main_blade[current_number_row-1])  # "Количество слоёв сетки межлопаточного канала"
+            main_data[current_number_row].append(number_of_layers[current_number_row-1])  # "Количество лопаток в венце"
+        except:
+            main_data[current_number_row].append("-")
+            main_data[current_number_row].append("-")
         current_number_row += 1
+
+    # Поиск имён рядов за исключением "вся сетка"
+    if (key == 'Average'
+            and list_content[n_key + 1] == 'wall'
+            and list_content[n_key + 2] == 'Distance'
+            and list_content[n_key + 3] == ':'
+            and flag == 0):
+        start = n_key + 5
+        flag += 1
+    if (key == 'Max'
+            and list_content[n_key + 1] == 'Location'
+            and list_content[n_key + 2] == 'wall'
+            and list_content[n_key + 3] == 'Distance'
+            and flag == 1):
+        start = n_key + 7
+    if (key == 'No'
+            and list_content[n_key + 1] == 'Negative'
+            and list_content[n_key + 2] == 'Cell'):
+        end = n_key
+        try:
+            name_row =  ' '.join(list_content[start:end])
+            print(name_row)
+
+        except:
+            pass
 
 
 print(main_data)
